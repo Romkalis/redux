@@ -1,38 +1,13 @@
-Studying project | Redux
+# React + Vite
 
-docs from:
-https://github.com/rajdee/redux-in-russian/tree/master/docs/basics
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+components/
+  | App.jsx
+slices/
+  | index.js
+  | counterSlice.js
+index.jsx
 
 
+Для работы с Toolkit мы выделили директорию slices с двумя файлами внутри — index.js и counterSlice.js.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+В файле index.js мы будем инициализировать хранилище и объединять все редьюсеры. Сами редьюсеры разбиваются по отдельным файлам — слайсам или срезам. Каждый слайс отвечает за определенную сущность в приложении. Например, в приложении со списком товаров и покупателей можно выделить два слайса: один для товаров, другой для покупателей.
