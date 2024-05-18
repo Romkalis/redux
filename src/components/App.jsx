@@ -1,22 +1,31 @@
-import { useState } from "react";
 import reactLogo from "../assets/react.svg";
 import "./App.css";
+import {useSelector, useDispatch} from 'react-redux';
+import { increment, decrement, incrementByAmount } from "../slices/counterSlice";
 
 
 
 function App() {
-  const [count, setCount] = useState(0);
 
+  const count = useSelector((state) => state.counter.value);
+  const dispatch = useDispatch();
+  
   return (
     <>
       <img src={reactLogo} className="logo react" alt="React logo" />
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => dispatch(increment())}>
+          increment
+        </button>
+        <button onClick={() => dispatch(decrement())}>
+          decrement
+        </button>
+        <button onClick={() => dispatch(incrementByAmount(11))}>
+          increment !!
         </button>
         <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
+          count is {count}
         </p>
       </div>
       <p className="read-the-docs">
